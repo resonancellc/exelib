@@ -1,5 +1,5 @@
 /**
-* conf.h/conf.c
+* exe_conf.h
 * Config file loader/parser, loads a file containg "<key> <value>" pairs.
 * Stores them in an array of conf_var_t, has helper functions for easy 
 * config var queries.
@@ -139,7 +139,7 @@ static int conf_load(conf_t *conf, const char *path)
  * @param  key [config key value]
  * @return     [conf_var_t container]
  */
-conf_var_t *conf_get_var(conf_t *conf, const char *key)
+static conf_var_t *conf_get_var(conf_t *conf, const char *key)
 {
   if (!conf->success)
     return NULL;
@@ -158,7 +158,7 @@ conf_var_t *conf_get_var(conf_t *conf, const char *key)
  * @param  key [config key value]
  * @return     [int value]
  */
-int conf_get_int(conf_t *conf, const char *key)
+static int conf_get_int(conf_t *conf, const char *key)
 {
   if (!conf->success)
     return 0;
@@ -176,7 +176,7 @@ int conf_get_int(conf_t *conf, const char *key)
  * @param  key [config key value]
  * @return     [string value]
  */
-char *conf_get_string(conf_t *conf, const char *key)
+static char *conf_get_string(conf_t *conf, const char *key)
 {
   if (!conf->success)
     return " ";
@@ -192,7 +192,7 @@ char *conf_get_string(conf_t *conf, const char *key)
  * [conf_free free the malloc]
  * @param conf [conf_t pointer]
  */
-void conf_free(conf_t *conf)
+static void conf_free(conf_t *conf)
 {
   if (!conf->success)
     return;

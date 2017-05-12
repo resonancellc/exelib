@@ -1,3 +1,10 @@
+/**
+* exe_io.h
+* Config file loader/parser, loads a file containg "<key> <value>" pairs.
+* Stores them in an array of conf_var_t, has helper functions for easy 
+* config var queries.
+*/
+
 #ifndef EXE_IO_H
 #define EXE_IO_H
 
